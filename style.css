@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Lora', serif;
+  background-color: #756213;
+  background-image: linear-gradient(315deg, #756213 0%, #000000 74%);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,22 +22,22 @@ body {
   width: 90vw;
 }
 
-.panel {
+.cards {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
-  border-radius: 50px;
-  color: #fff;
+  border-radius: 30px;
+  color: white;
   cursor: pointer;
   flex: 0.5;
   margin: 10px;
   position: relative;
-  -webkit-transition: all 700ms ease-in;
+  -webkit-transition: all 400ms ease-in;
 }
 
-.panel h3 {
-  font-size: 24px;
+.cards h3 {
+  font-size: 40px;
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -42,13 +45,13 @@ body {
   opacity: 0;
 }
 
-.panel.active {
+.cards.active {
   flex: 5;
 }
 
-.panel.active h3 {
+.cards.active h3 {
   opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
+  transition: opacity 0.2s ease-in 0.4s;
 }
 
 @media (max-width: 480px) {
@@ -56,8 +59,8 @@ body {
     width: 100vw;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
+  .cards:nth-of-type(4),
+  .cards:nth-of-type(5) {
     display: none;
   }
-}
+} ;
