@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+
+  --sin-0: 0;
+  --sin-30: 0.5;
+  --sin-60: 0.86602540378;
+  --sin-90: 1;
+
+  --cos-0: 1;
+  --cos-30: 0.86602540378;
+  --cos-60: 0.5;
+  --cos-90: 0;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #171717;
+  color: var(--primary-color);
+}
+body {
+  font-family: 'Heebo', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 5rem;
+  padding: 0;
+  position: absolute;
+  top: 100px;
+  transition: all 0.5s ease-in;
+}
+
+.toggle-switch {
+  height: 2rem;
+  width: 3rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 2.5rem), -50%);
+  transition: all 0.5s ease-in;
+}
+
+html.dark .toggle-switch {
+  transform: translate(calc(-50% + 2.5rem), -50%);
+}
+
+.toggle-switch::after {
+  content: '\f185';
+  font-family: 'Font Awesome 5 Free';
+  background-color: transparent;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+html.dark .toggle-switch::after {
+  content: '\f186';
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  border-radius: 50%;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 1.5rem;
+  background: radial-gradient(
+    circle at center,
+    transparent,
+    rgba(127, 127, 127, 0.01),
+    rgba(127, 127, 127, 0.1)
+  );
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hour-mark {
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.hour-mark.quarter {
+  width: 10px;
+  height: 10px;
+}
+
+.mark1 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-60)),
+    calc(-50% - 110px * var(--sin-60))
+  );
+}
+.mark2 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-30)),
+    calc(-50% - 110px * var(--sin-30))
+  );
+}
+.mark3 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-0)),
+    calc(-50% - 110px * var(--sin-0))
+  );
+}
+.mark4 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-30)),
+    calc(-50% + 110px * var(--sin-30))
+  );
+}
+.mark5 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-60)),
+    calc(-50% + 110px * var(--sin-60))
+  );
+}
+.mark6 {
+  transform: translate(
+    calc(-50% + 110px * var(--cos-90)),
+    calc(-50% + 110px * var(--sin-90))
+  );
+}
+.mark7 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-60)),
+    calc(-50% + 110px * var(--sin-60))
+  );
+}
+.mark8 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-30)),
+    calc(-50% + 110px * var(--sin-30))
+  );
+}
+.mark9 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-0)),
+    calc(-50% + 110px * var(--sin-0))
+  );
+}
+.mark10 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-30)),
+    calc(-50% - 110px * var(--sin-30))
+  );
+}
+.mark11 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-60)),
+    calc(-50% - 110px * var(--sin-60))
+  );
+}
+.mark12 {
+  transform: translate(
+    calc(-50% - 110px * var(--cos-90)),
+    calc(-50% - 110px * var(--sin-90))
+  );
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  width: 5px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  height: 100px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.second {
+  height: 100px;
+  transform: translate(-50%, -100%) rotate(0deg);
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.center-point::after {
+  content: '';
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 3rem;
+}
+
+.date {
+  color: #aaa;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5em;
+  transition: all 0.5s ease-in;
+  font-size: 1.2rem;
+}
