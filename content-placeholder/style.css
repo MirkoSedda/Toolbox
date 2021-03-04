@@ -83,7 +83,7 @@ img {
     #f6f7f8 20%,
     #f6f7f8 100%
   );
-  background-size: 200% 100%;
+  background-size: 100% 100%;
   animation: bgPos 1s linear infinite;
 }
 
@@ -93,6 +93,7 @@ img {
   margin: 0;
   height: 10px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 @keyframes bgPos {

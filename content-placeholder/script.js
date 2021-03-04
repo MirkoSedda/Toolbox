@@ -7,7 +7,7 @@ const name = document.getElementById('name')
 const animated_bgs = document.querySelectorAll('.animated-bg')
 const animated_bg_texts = document.querySelectorAll('.animated-bg-text')
 
-setTimeout(getData, 2500)
+setTimeout(getData, 2000)
 
 function getData() {
   header.innerHTML =
