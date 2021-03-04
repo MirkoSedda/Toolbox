@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root{
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    margin: 50px;
+    border: 1px solid #e9e9e9;
+    width: 350px;
+    height: 600px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(5px);
+    background: radial-gradient(at 50% 0%, rgba(0,0,0,0), rgba(255,255,255, 0.3));
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.5);
+}
+
+.profile{
+    margin: 10px 30px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+.profile img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 5px 10px;
+    border: 2px solid rgb(235, 86, 28);
+    cursor: pointer;   
+}
+
+.profile .fas{
+    position: absolute;
+    justify-content: end;
+    color: gray;
+    left: 300px;
+    cursor: pointer;
+}
+
+.loveMe {
+    height: 440px;
+    width: 300px;
+    background:url(img/headphones.jpg) no-repeat center center/cover;
+    margin: auto;
+    cursor: pointer;
+    max-width: 100%;
+    left: 50%;
+    border-radius: 15px;
+}
+
+.loveMe .fa-heart{
+    position: absolute;
+    animation: grow 0.6s linear;
+    transform: translate(-50%, -50%) scale(0);
+    color: white;
+    opacity: 0;
+}
+
+.icons{
+    margin: 10px 30px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+.icons 
+.fa, .far, .fas{
+    color: gray;
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#bookmark{
+    position: absolute;
+    left: 300px;
+}
+
+#heart.fa-heart{
+    color: red;
+}
+
+.comments{
+    margin: 10px 38px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+.comments span{
+    font-weight: bold;
+}
+
+.comments small{
+    font-size: 16px;
+}
+
+@keyframes grow{
+
+    to{
+        transform: translate(-50%, -50%) scale(8);
+        opacity:1;
+    }
+    
+}
