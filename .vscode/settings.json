@@ -1,7 +1,10 @@
 {
     "cSpell.ignoreWords": [
         "ampm",
-        "nums"
+        "fetch",
+        "nums",
+        "pokedex",
+        "pokemons"
     ],
     "cSpell.words": [
         "hoverboard"
